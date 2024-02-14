@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Landscape from "C:/Users/ruthi/tasks/src/assets/art-institute-of-chicago-w9njMDJJ3c4-unsplash.jpg";
+import Landscape from "./art-institute-of-chicago-w9njMDJJ3c4-unsplash.jpg";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 function App(): JSX.Element {
