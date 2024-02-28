@@ -47,6 +47,7 @@ export function isCorrect(question: Question, answer: string): boolean {
 export function isValid(question: Question, answer: string): boolean {
     let result = true;
     if (question.type === "multiple_choice_question") {
+        // eslint-disable-next-line no-extra-parens
         question.options.includes(answer) ? (result = true) : (result = false);
     }
     return result;
