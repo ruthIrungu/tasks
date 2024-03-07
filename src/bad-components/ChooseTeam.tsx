@@ -11,7 +11,8 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const allOptions = [...PEOPLE];
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
