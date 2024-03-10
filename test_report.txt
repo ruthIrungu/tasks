@@ -15,7 +15,194 @@ PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
 PASS src/components/StartAttempt.test.tsx
-PASS src/bad-components/ChooseTeam.test.tsx
+FAIL src/form-components/MultipleChoiceQuestion.test.tsx
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mMultiple Choice Question[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"1"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"2"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"3"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [0m❌[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      33 |         const select = screen.getByRole("combobox");
+      34 |         userEvent.selectOptions(select, "2");
+    > 35 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      36 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      37 |     });
+      38 |     test("Can choose the correct answer and then incorrect", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:35:23)
+
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer and then incorrect
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mMultiple Choice Question[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"1"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"2"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"3"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [0m❌[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      45 |         const select = screen.getByRole("combobox");
+      46 |         userEvent.selectOptions(select, "2");
+    > 47 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      48 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      49 |         userEvent.selectOptions(select, "3");
+      50 |         expect(screen.getByText(/❌/i)).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:47:23)
+
+  ● MultipleChoiceQuestion Component tests › One more test of choosing the right answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mMultiple Choice Question[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Hello"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"World"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [0m❌[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      74 |         const select = screen.getByRole("combobox");
+      75 |         userEvent.selectOptions(select, "World");
+    > 76 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      77 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      78 |     });
+      79 | });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:76:23)
+
 FAIL src/components/TwoDice.test.tsx
   ● TwoDice Component tests › There is a `left-die` and `right-die` testid
 
@@ -416,8 +603,200 @@ FAIL src/components/TwoDice.test.tsx
       at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/components/TwoDice.test.tsx:121:32)
 
-PASS src/bad-components/DoubleHalf.test.tsx
+PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/functions.test.ts
+PASS src/bad-components/DoubleHalf.test.tsx
+FAIL src/HtmlCss.test.tsx
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+FAIL src/form-components/EditMode.test.tsx
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+FAIL src/form-components/CheckAnswer.test.tsx
+  ● CheckAnswer Component tests › Entering the right answer makes it correct.
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mCheck Answer[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"formAnswerCheck"[39m
+            [36m>[39m
+              [0mAnswer:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"formAnswerCheck"[39m
+              [33mvalue[39m=[32m"42"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mThe answer is [0m
+            [0m42[0m
+            [0m.[0m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m❌[0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      19 |         const inputBox = screen.getByRole("textbox");
+      20 |         userEvent.type(inputBox, "42");
+    > 21 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      22 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      23 |     });
+      24 |     test("Entering the wrong answer makes it incorrect.", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/CheckAnswer.test.tsx:21:23)
+
+  ● CheckAnswer Component tests › Entering a different right answer makes it correct.
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mCheck Answer[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"formAnswerCheck"[39m
+            [36m>[39m
+              [0mAnswer:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"formAnswerCheck"[39m
+              [33mvalue[39m=[32m"Hello"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mThe answer is [0m
+            [0mHello[0m
+            [0m.[0m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m❌[0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      33 |         const inputBox = screen.getByRole("textbox");
+      34 |         userEvent.type(inputBox, "Hello");
+    > 35 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      36 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      37 |     });
+      38 |     test("Entering a different wrong answer still makes it incorrect.", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/CheckAnswer.test.tsx:35:23)
+
 FAIL src/components/ChangeType.test.tsx
   ● ChangeType Component tests › Clicking the button changes the type.
 
@@ -502,7 +881,472 @@ FAIL src/components/CycleHoliday.test.tsx
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/components/CycleHoliday.test.tsx:11:39)
 
+FAIL src/form-components/GiveAttempts.test.tsx
+  ● Console
+
+    console.error
+      Warning: Received NaN for the `value` attribute. If this is expected, cast the value to a string.
+          at input
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/FormControl.js:27:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/FormGroup.js:19:3
+          at div
+          at GiveAttempts (/home/runner/work/tasks/tasks/src/form-components/GiveAttempts.tsx:5:45)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3492:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at diffProperties (node_modules/react-dom/cjs/react-dom.development.js:9172:5)
+      at prepareUpdate (node_modules/react-dom/cjs/react-dom.development.js:10215:10)
+
+  ● GiveAttempts Component tests › Cannot gain blank amounts
+
+    TestingLibraryElementError: Unable to find an element with the text: /3/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mGive Attempts[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mThe current number of attempts is [0m
+            [0mNaN[0m
+            [0m.[0m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"attempts"[39m
+            [36m>[39m
+              [0mRequested attempts:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"attempts"[39m
+              [33mtype[39m=[32m"number"[39m
+              [33mvalue[39m=[32m"NaN"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUse[0m
+              [0m [0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mGain [0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      42 |         fireEvent.change(amountToGive, { target: { value: "" } });
+      43 |         gain.click();
+    > 44 |         expect(screen.getByText(/3/i)).toBeInTheDocument();
+         |                       ^
+      45 |     });
+      46 | });
+      47 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/GiveAttempts.test.tsx:44:23)
+
 PASS src/components/Counter.test.tsx
+FAIL src/form-components/ChangeColor.test.tsx
+  ● ChangeColor Component tests › There are at least 8 radio buttons and the colored box
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="colored-box"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mChange Color[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mchecked[39m=[32m""[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-red"[39m
+                [33mname[39m=[32m"red"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-red"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mred[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: orange;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-orange"[39m
+                [33mname[39m=[32m"orange"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-orange"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0morange[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: yellow;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-yellow"[39m
+                [33mname[39m=[32m"yellow"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-yellow"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0myellow[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: green;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-green"[39m
+                [33mname[39m=[32m"green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mgreen[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: blue;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-blue"[39m
+                [33mname[39m=[32m"blue"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-blue"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mblue[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(153, 102, 204);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-amethyst"[39m
+                [33mname[39m=[32m"amethyst"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-amethyst"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mamethyst[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: purple;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-purple"[39m
+                [33mname[39m=[32m"purple"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-purple"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mpurple[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(156, 175, 136);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-sage-green"[39m
+                [33mname[39m=[32m"sage green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-sage-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0msage green[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [0mThe current color is[0m
+            [0m [0m
+            [36m<span[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [0mred[0m
+            [36m</span>[39m
+            [0m [0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       8 |         const radios = screen.getAllByRole("radio");
+       9 |         expect(radios.length).toBeGreaterThanOrEqual(8);
+    > 10 |         expect(screen.getByTestId("colored-box")).toBeInTheDocument();
+         |                       ^
+      11 |     });
+      12 |     test("Switching the color switches the displayed color.", () => {
+      13 |         const radios: HTMLInputElement[] = screen.getAllByRole("radio");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:10:23)
+
+  ● ChangeColor Component tests › Switching the color switches the displayed color.
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="colored-box"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mChange Color[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mchecked[39m=[32m""[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-red"[39m
+                [33mname[39m=[32m"red"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-red"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mred[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: orange;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-orange"[39m
+                [33mname[39m=[32m"orange"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-orange"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0morange[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: yellow;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-yellow"[39m
+                [33mname[39m=[32m"yellow"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-yellow"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0myellow[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: green;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-green"[39m
+                [33mname[39m=[32m"green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mgreen[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: blue;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-blue"[39m
+                [33mname[39m=[32m"blue"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-blue"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mblue[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(153, 102, 204);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-amethyst"[39m
+                [33mname[39m=[32m"amethyst"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-amethyst"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mamethyst[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: purple;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-purple"[39m
+                [33mname[39m=[32m"purple"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-purple"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mpurple[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(156, 175, 136);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-sage-green"[39m
+                [33mname[39m=[32m"sage green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-sage-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0msage green[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [0mThe current color is[0m
+            [0m [0m
+            [36m<span[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [0mred[0m
+            [36m</span>[39m
+            [0m [0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      14 |         // Switch to first
+      15 |         radios[0].click();
+    > 16 |         let coloredBox = screen.getByTestId("colored-box");
+         |                                 ^
+      17 |         expect(coloredBox).toHaveTextContent(radios[0].value);
+      18 |         expect(coloredBox).toHaveStyle({ backgroundColor: radios[0].value });
+      19 |         // Switch to third
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:16:33)
+
 FAIL src/components/RevealAnswer.test.tsx
   ● RevealAnswer Component tests › The answer '42' is not visible initially
 
@@ -571,2620 +1415,1578 @@ FAIL src/components/RevealAnswer.test.tsx
 PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
 FAIL src/text.test.tsx
-  ● renders the text 'Hello World' somewhere
+  ● Test suite failed to run
 
-    TestingLibraryElementError: Unable to find an element with the text: /Hello World/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+FAIL src/App.test.tsx
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+-----------------------------|---------|----------|---------|---------|-------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------|---------|----------|---------|---------|-------------------
+All files                    |   94.05 |    94.31 |    89.6 |   93.86 |                   
+ src                         |   99.45 |      100 |   98.57 |   99.42 |                   
+  App.tsx                    |       0 |      100 |       0 |       0 | 19                
+  arrays.ts                  |     100 |      100 |     100 |     100 |                   
+  functions.ts               |     100 |      100 |     100 |     100 |                   
+  nested.ts                  |     100 |      100 |     100 |     100 |                   
+  objects.ts                 |     100 |      100 |     100 |     100 |                   
+ src/bad-components          |     100 |    83.33 |     100 |     100 |                   
+  ChooseTeam.tsx             |     100 |       50 |     100 |     100 | 20                
+  ColoredBox.tsx             |     100 |      100 |     100 |     100 |                   
+  DoubleHalf.tsx             |     100 |      100 |     100 |     100 |                   
+  ShoveBox.tsx               |     100 |      100 |     100 |     100 |                   
+ src/components              |     100 |    94.44 |     100 |     100 |                   
+  ChangeType.tsx             |     100 |      100 |     100 |     100 |                   
+  Counter.tsx                |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx           |     100 |      100 |     100 |     100 |                   
+  RevealAnswer.tsx           |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx           |     100 |      100 |     100 |     100 |                   
+  TwoDice.tsx                |     100 |       90 |     100 |     100 | 31                
+ src/form-components         |   57.89 |       50 |   45.45 |   57.89 |                   
+  ChangeColor.tsx            |      20 |      100 |   11.11 |      20 | 17-87             
+  CheckAnswer.tsx            |   85.71 |       50 |     100 |   85.71 | 15                
+  EditMode.tsx               |       0 |        0 |       0 |       0 | 5-21              
+  GiveAttempts.tsx           |     100 |      100 |     100 |     100 |                   
+  MultipleChoiceQuestion.tsx |     100 |      100 |     100 |     100 |                   
+ src/interfaces              |       0 |        0 |       0 |       0 |                   
+  answer.ts                  |       0 |        0 |       0 |       0 |                   
+  question.ts                |       0 |        0 |       0 |       0 |                   
+-----------------------------|---------|----------|---------|---------|-------------------
+Summary of all failing tests
+FAIL src/form-components/MultipleChoiceQuestion.test.tsx
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
+        [36m<div>[39m
           [36m<div>[39m
             [36m<h3>[39m
-              [0mDouble Half[0m
+              [0mMultiple Choice Question[0m
             [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
           [36m</div>[39m
-          [36m<hr />[39m
           [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
               [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
               [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"1"[39m
                 [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mred[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
-            [36m/>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
-            [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"2"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"3"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
             [36m</div>[39m
             [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
+              [0m❌[0m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
 
-       5 | test("renders the text 'Hello World' somewhere", () => {
-       6 |     render(<App />);
-    >  7 |     const texts = screen.getAllByText(/Hello World/);
-         |                          ^
-       8 |     expect(texts.length).toBeGreaterThanOrEqual(1);
-       9 | });
-      10 |
+      33 |         const select = screen.getByRole("combobox");
+      34 |         userEvent.selectOptions(select, "2");
+    > 35 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      36 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      37 |     });
+      38 |     test("Can choose the correct answer and then incorrect", () => {
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
-      at Object.<anonymous> (src/text.test.tsx:7:26)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:35:23)
 
-PASS src/App.test.tsx
+  ● MultipleChoiceQuestion Component tests › Can choose the correct answer and then incorrect
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mMultiple Choice Question[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"1"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"2"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"3"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [0m❌[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      45 |         const select = screen.getByRole("combobox");
+      46 |         userEvent.selectOptions(select, "2");
+    > 47 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      48 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      49 |         userEvent.selectOptions(select, "3");
+      50 |         expect(screen.getByText(/❌/i)).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:47:23)
+
+  ● MultipleChoiceQuestion Component tests › One more test of choosing the right answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mMultiple Choice Question[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [0mWhich option?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"multipleChoice"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Hello"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"World"[39m
+                [36m>[39m
+                  [0m option [0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [0m❌[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      74 |         const select = screen.getByRole("combobox");
+      75 |         userEvent.selectOptions(select, "World");
+    > 76 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      77 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      78 |     });
+      79 | });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/MultipleChoiceQuestion.test.tsx:76:23)
+
+FAIL src/components/TwoDice.test.tsx
+  ● TwoDice Component tests › There is a `left-die` and `right-die` testid
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      24 |     });
+      25 |     test("There is a `left-die` and `right-die` testid", () => {
+    > 26 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      27 |         const rightDie = screen.getByTestId("right-die");
+      28 |         expect(leftDie).toBeInTheDocument();
+      29 |         expect(rightDie).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:26:32)
+
+  ● TwoDice Component tests › The `left-die` and `right-die` are two different numbers
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      30 |     });
+      31 |     test("The `left-die` and `right-die` are two different numbers", () => {
+    > 32 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      33 |         const rightDie = screen.getByTestId("right-die");
+      34 |         const leftNumber = extractDigits(leftDie);
+      35 |         const rightNumber = extractDigits(rightDie);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:32:32)
+
+  ● TwoDice Component tests › Clicking left button changes first number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou win![0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      54 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      55 |         // And the number to be 5
+    > 56 |         const leftNumber = extractDigits(screen.getByTestId("left-die"));
+         |                                                 ^
+      57 |         expect(leftNumber).toEqual(5);
+      58 |     });
+      59 |     // Clicking right button changes second number
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:56:49)
+
+  ● TwoDice Component tests › Clicking right button changes second number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="right-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      66 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      67 |         // And the number to be 5
+    > 68 |         const rightNumber = extractDigits(screen.getByTestId("right-die"));
+         |                                                  ^
+      69 |         expect(rightNumber).toEqual(5);
+      70 |     });
+      71 |     // Rolling two different numbers does not win or lose the game
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:68:50)
+
+  ● TwoDice Component tests › Rolling two different numbers does not win or lose the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      74 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      75 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 76 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      77 |         const rightDie = screen.getByTestId("right-die");
+      78 |         // When the left and right buttons are rolled once each
+      79 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:76:32)
+
+  ● TwoDice Component tests › Getting snake eyes loses the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       95 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+       96 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    >  97 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+       98 |         const rightDie = screen.getByTestId("right-die");
+       99 |         // When the left and right buttons are rolled once each
+      100 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:97:32)
+
+  ● TwoDice Component tests › Getting matching numbers wins the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [0mRight Die: [0m
+            [36m<span>[39m
+              [0m5[0m
+              [0m [0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Left[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mRoll Right[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span>[39m
+              [0mYou lose.[0m
+            [36m</span>[39m
+            [36m<span />[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      119 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      120 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 121 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+      122 |         const rightDie = screen.getByTestId("right-die");
+      123 |         // When the left and right buttons are rolled once each
+      124 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:121:32)
+
 FAIL src/HtmlCss.test.tsx
-  ● Some HTML Elements are added. › There is a header
+  ● Test suite failed to run
 
-    TestingLibraryElementError: Found multiple elements with the role "heading"
+    Jest encountered an unexpected token
 
-    Here are the matching elements:
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<h3>[39m
-      [0mDouble Half[0m
-    [36m</h3>[39m
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<h3>[39m
-      [0mChoose Team[0m
-    [36m</h3>[39m
+    By default "node_modules" folder is ignored by transformers.
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<h3>[39m
-      [0mColored Box[0m
-    [36m</h3>[39m
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<h3>[39m
-      [0mShove Box[0m
-    [36m</h3>[39m
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
 
-    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+FAIL src/form-components/EditMode.test.tsx
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
+
+FAIL src/form-components/CheckAnswer.test.tsx
+  ● CheckAnswer Component tests › Entering the right answer makes it correct.
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mCheck Answer[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
           [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mDouble Half[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"formAnswerCheck"[39m
             [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mred[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
+              [0mAnswer:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"formAnswerCheck"[39m
+              [33mvalue[39m=[32m"42"[39m
             [36m/>[39m
           [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
+          [36m<div>[39m
+            [0mThe answer is [0m
+            [0m42[0m
             [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
           [36m</div>[39m
-          [36m<hr />[39m
           [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
-            [36m</div>[39m
+            [0m❌[0m
           [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
 
-       7 |     test("There is a header", () => {
-       8 |         render(<App />);
-    >  9 |         const header = screen.getByRole("heading");
-         |                               ^
-      10 |         expect(header).toBeInTheDocument();
+      19 |         const inputBox = screen.getByRole("textbox");
+      20 |         userEvent.type(inputBox, "42");
+    > 21 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      22 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      23 |     });
+      24 |     test("Entering the wrong answer makes it incorrect.", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/CheckAnswer.test.tsx:21:23)
+
+  ● CheckAnswer Component tests › Entering a different right answer makes it correct.
+
+    TestingLibraryElementError: Unable to find an element with the text: /✔️/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mCheck Answer[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"formAnswerCheck"[39m
+            [36m>[39m
+              [0mAnswer:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"formAnswerCheck"[39m
+              [33mvalue[39m=[32m"Hello"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mThe answer is [0m
+            [0mHello[0m
+            [0m.[0m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m❌[0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      33 |         const inputBox = screen.getByRole("textbox");
+      34 |         userEvent.type(inputBox, "Hello");
+    > 35 |         expect(screen.getByText(/✔️/i)).toBeInTheDocument();
+         |                       ^
+      36 |         expect(screen.queryByText(/❌/i)).not.toBeInTheDocument();
+      37 |     });
+      38 |     test("Entering a different wrong answer still makes it incorrect.", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/CheckAnswer.test.tsx:35:23)
+
+FAIL src/components/ChangeType.test.tsx
+  ● ChangeType Component tests › Clicking the button changes the type.
+
+    TestingLibraryElementError: Unable to find an element with the text: /Multiple Choice/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mChange Type[0m
+          [36m</button>[39m
+          [36m<span>[39m
+            [0mMulti Choice Question [0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      31 |         changeTypeButton.click();
+      32 |         // Should be Multiple Choice
+    > 33 |         const typeTextMC = screen.getByText(/Multiple Choice/i);
+         |                                   ^
+      34 |         expect(typeTextMC).toBeInTheDocument();
+      35 |         // Should NOT be Short Answer
+      36 |         const typeTextSA = screen.queryByText(/Short Answer/i);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:33:35)
+
+FAIL src/components/CycleHoliday.test.tsx
+  ● CycleHoliday Component tests › An initial holiday is displayed
+
+    TestingLibraryElementError: Unable to find an element with the text: /Holiday: (.*)/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [0mCurrent Holiday: [0m
+            [36m<span>[39m
+              [0m [0m
+              [0m��[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       9 |
+      10 |     test("An initial holiday is displayed", () => {
+    > 11 |         const initialHoliday = screen.getByText(/Holiday: (.*)/i);
+         |                                       ^
+      12 |         expect(initialHoliday).toBeInTheDocument();
+      13 |     });
+      14 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/CycleHoliday.test.tsx:11:39)
+
+FAIL src/form-components/GiveAttempts.test.tsx
+  ● GiveAttempts Component tests › Cannot gain blank amounts
+
+    TestingLibraryElementError: Unable to find an element with the text: /3/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mGive Attempts[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mThe current number of attempts is [0m
+            [0mNaN[0m
+            [0m.[0m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"attempts"[39m
+            [36m>[39m
+              [0mRequested attempts:[0m
+            [36m</label>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"form-control"[39m
+              [33mid[39m=[32m"attempts"[39m
+              [33mtype[39m=[32m"number"[39m
+              [33mvalue[39m=[32m"NaN"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mUse[0m
+              [0m [0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mGain [0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      42 |         fireEvent.change(amountToGive, { target: { value: "" } });
+      43 |         gain.click();
+    > 44 |         expect(screen.getByText(/3/i)).toBeInTheDocument();
+         |                       ^
+      45 |     });
+      46 | });
+      47 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/GiveAttempts.test.tsx:44:23)
+
+FAIL src/form-components/ChangeColor.test.tsx
+  ● ChangeColor Component tests › There are at least 8 radio buttons and the colored box
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="colored-box"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mChange Color[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mchecked[39m=[32m""[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-red"[39m
+                [33mname[39m=[32m"red"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-red"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mred[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: orange;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-orange"[39m
+                [33mname[39m=[32m"orange"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-orange"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0morange[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: yellow;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-yellow"[39m
+                [33mname[39m=[32m"yellow"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-yellow"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0myellow[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: green;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-green"[39m
+                [33mname[39m=[32m"green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mgreen[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: blue;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-blue"[39m
+                [33mname[39m=[32m"blue"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-blue"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mblue[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(153, 102, 204);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-amethyst"[39m
+                [33mname[39m=[32m"amethyst"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-amethyst"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mamethyst[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: purple;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-purple"[39m
+                [33mname[39m=[32m"purple"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-purple"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mpurple[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(156, 175, 136);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-sage-green"[39m
+                [33mname[39m=[32m"sage green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-sage-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0msage green[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [0mThe current color is[0m
+            [0m [0m
+            [36m<span[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
+              [0mred[0m
+            [36m</span>[39m
+            [0m [0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       8 |         const radios = screen.getAllByRole("radio");
+       9 |         expect(radios.length).toBeGreaterThanOrEqual(8);
+    > 10 |         expect(screen.getByTestId("colored-box")).toBeInTheDocument();
+         |                       ^
       11 |     });
-      12 |
+      12 |     test("Switching the color switches the displayed color.", () => {
+      13 |         const radios: HTMLInputElement[] = screen.getAllByRole("radio");
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
-      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/HtmlCss.test.tsx:9:31)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:10:23)
 
-  ● Some HTML Elements are added. › There is an image with alt text
+  ● ChangeColor Component tests › Switching the color switches the displayed color.
 
-    TestingLibraryElementError: Unable to find an accessible element with the role "img"
-
-    Here are the accessible roles:
-
-      banner:
-
-      Name "":
-      [36m<header[39m
-        [33mclass[39m=[32m"App-header"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      separator:
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      --------------------------------------------------
-      heading:
-
-      Name "Double Half":
-      [36m<h3 />[39m
-
-      Name "Choose Team":
-      [36m<h3 />[39m
-
-      Name "Colored Box":
-      [36m<h3 />[39m
-
-      Name "Shove Box":
-      [36m<h3 />[39m
-
-      --------------------------------------------------
-      button:
-
-      Name "Double":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Halve":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Alan Turing":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Grace Hopper":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Ada Lovelace":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Charles Babbage":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Barbara Liskov":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Margaret Hamilton":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Clear Team":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Next Color":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Shove":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Add One":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Reveal Answer":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Start Quiz":
-      [36m<button />[39m
-
-      Name "Stop Quiz":
-      [36m<button[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Mulligan":
-      [36m<button />[39m
-
-      Name "Roll Left":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Roll Right":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Change Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Alphabet":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Year":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
+    TestingLibraryElementError: Unable to find an element by: [data-testid="colored-box"]
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
+        [36m<div>[39m
           [36m<div>[39m
             [36m<h3>[39m
-              [0mDouble Half[0m
+              [0mChange Color[0m
             [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
           [36m</div>[39m
-          [36m<hr />[39m
           [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
             [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+              [36m<input[39m
+                [33mchecked[39m=[32m""[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-red"[39m
+                [33mname[39m=[32m"red"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-red"[39m
+                [33mtitle[39m=[32m""[39m
               [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+                [0mred[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: orange;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-orange"[39m
+                [33mname[39m=[32m"orange"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-orange"[39m
+                [33mtitle[39m=[32m""[39m
               [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
+                [0morange[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: yellow;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-yellow"[39m
+                [33mname[39m=[32m"yellow"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-yellow"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0myellow[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: green;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-green"[39m
+                [33mname[39m=[32m"green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mgreen[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: blue;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-blue"[39m
+                [33mname[39m=[32m"blue"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-blue"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mblue[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(153, 102, 204);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-amethyst"[39m
+                [33mname[39m=[32m"amethyst"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-amethyst"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mamethyst[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: purple;"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-purple"[39m
+                [33mname[39m=[32m"purple"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-purple"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mpurple[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [33mstyle[39m=[32m"background-color: rgb(156, 175, 136);"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"response-sage-green"[39m
+                [33mname[39m=[32m"sage green"[39m
+                [33mtype[39m=[32m"radio"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"response-sage-green"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0msage green[0m
+              [36m</label>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<hr />[39m
           [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
+            [0m [0m
+            [0mThe current color is[0m
+            [0m [0m
+            [36m<span[39m
+              [33mstyle[39m=[32m"background-color: red;"[39m
+            [36m>[39m
               [0mred[0m
             [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
-            [36m/>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
-            [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
-            [36m</div>[39m
+            [0m [0m
           [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
 
-      13 |     test("There is an image with alt text", () => {
-      14 |         render(<App />);
-    > 15 |         const image = screen.getByRole("img");
-         |                              ^
-      16 |         expect(image).toBeInTheDocument();
-      17 |         expect(image).toHaveAttribute("alt");
-      18 |     });
+      14 |         // Switch to first
+      15 |         radios[0].click();
+    > 16 |         let coloredBox = screen.getByTestId("colored-box");
+         |                                 ^
+      17 |         expect(coloredBox).toHaveTextContent(radios[0].value);
+      18 |         expect(coloredBox).toHaveStyle({ backgroundColor: radios[0].value });
+      19 |         // Switch to third
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/HtmlCss.test.tsx:15:30)
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/form-components/ChangeColor.test.tsx:16:33)
 
-  ● Some HTML Elements are added. › There is a list with at least three elements
+FAIL src/components/RevealAnswer.test.tsx
+  ● RevealAnswer Component tests › The answer '42' is not visible initially
 
-    TestingLibraryElementError: Unable to find an accessible element with the role "list"
+    expect(received).toBeNull()
 
-    Here are the accessible roles:
+    Received: <div>42</div>
 
-      banner:
+       9 |     test("The answer '42' is not visible initially", () => {
+      10 |         const answerText = screen.queryByText(/42/);
+    > 11 |         expect(answerText).toBeNull();
+         |                            ^
+      12 |     });
+      13 |     test("There is a Reveal Answer button", () => {
+      14 |         const revealButton = screen.getByRole("button", {
 
-      Name "":
-      [36m<header[39m
-        [33mclass[39m=[32m"App-header"[39m
-      [36m/>[39m
+      at Object.<anonymous> (src/components/RevealAnswer.test.tsx:11:28)
 
-      --------------------------------------------------
-      separator:
+  ● RevealAnswer Component tests › Clicking Reveal Answer button reveals the '42'
 
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      --------------------------------------------------
-      heading:
-
-      Name "Double Half":
-      [36m<h3 />[39m
-
-      Name "Choose Team":
-      [36m<h3 />[39m
-
-      Name "Colored Box":
-      [36m<h3 />[39m
-
-      Name "Shove Box":
-      [36m<h3 />[39m
-
-      --------------------------------------------------
-      button:
-
-      Name "Double":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Halve":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Alan Turing":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Grace Hopper":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Ada Lovelace":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Charles Babbage":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Barbara Liskov":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Margaret Hamilton":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Clear Team":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Next Color":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Shove":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Add One":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Reveal Answer":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Start Quiz":
-      [36m<button />[39m
-
-      Name "Stop Quiz":
-      [36m<button[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Mulligan":
-      [36m<button />[39m
-
-      Name "Roll Left":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Roll Right":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Change Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Alphabet":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Year":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
+    TestingLibraryElementError: Unable to find an element with the text: /42/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
+        [36m<div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
           [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mDouble Half[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mred[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
-            [36m/>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
-            [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
+            [0mReveal Answer[0m
+          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
 
-      20 |     test("There is a list with at least three elements", () => {
-      21 |         render(<App />);
-    > 22 |         const list = screen.getByRole("list");
-         |                             ^
-      23 |         expect(list).toBeInTheDocument();
-      24 |         expect(list.children.length).toBeGreaterThanOrEqual(3);
-      25 |     });
+      22 |         });
+      23 |         revealButton.click();
+    > 24 |         const answerText = screen.getByText(/42/);
+         |                                   ^
+      25 |         expect(answerText).toBeInTheDocument();
+      26 |     });
+      27 |     test("Clicking Reveal Answer button twice hides the '42'", () => {
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/HtmlCss.test.tsx:22:29)
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/RevealAnswer.test.tsx:24:35)
 
-  ● Some Bootstrap Elements are added › There is one bootstrap button with the text 'Log Hello World'
+  ● RevealAnswer Component tests › Clicking Reveal Answer button twice hides the '42'
 
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Log Hello World/i`
+    expect(received).toBeNull()
 
-    Here are the accessible roles:
+    Received: <div>42</div>
 
-      banner:
+      32 |         revealButton.click();
+      33 |         const answerText = screen.queryByText(/42/);
+    > 34 |         expect(answerText).toBeNull();
+         |                            ^
+      35 |     });
+      36 | });
+      37 |
 
-      Name "":
-      [36m<header[39m
-        [33mclass[39m=[32m"App-header"[39m
-      [36m/>[39m
+      at Object.<anonymous> (src/components/RevealAnswer.test.tsx:34:28)
 
-      --------------------------------------------------
-      separator:
+FAIL src/text.test.tsx
+  ● Test suite failed to run
 
-      Name "":
-      [36m<hr />[39m
+    Jest encountered an unexpected token
 
-      Name "":
-      [36m<hr />[39m
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-      Name "":
-      [36m<hr />[39m
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-      Name "":
-      [36m<hr />[39m
+    By default "node_modules" folder is ignored by transformers.
 
-      Name "":
-      [36m<hr />[39m
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-      Name "":
-      [36m<hr />[39m
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
 
-      Name "":
-      [36m<hr />[39m
+    Details:
 
-      Name "":
-      [36m<hr />[39m
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
 
-      Name "":
-      [36m<hr />[39m
+    SyntaxError: Cannot use import statement outside a module
 
-      Name "":
-      [36m<hr />[39m
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
 
-      --------------------------------------------------
-      heading:
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
 
-      Name "Double Half":
-      [36m<h3 />[39m
+FAIL src/App.test.tsx
+  ● Test suite failed to run
 
-      Name "Choose Team":
-      [36m<h3 />[39m
+    Jest encountered an unexpected token
 
-      Name "Colored Box":
-      [36m<h3 />[39m
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-      Name "Shove Box":
-      [36m<h3 />[39m
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-      --------------------------------------------------
-      button:
+    By default "node_modules" folder is ignored by transformers.
 
-      Name "Double":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-      Name "Halve":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
 
-      Name "Alan Turing":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+    Details:
 
-      Name "Grace Hopper":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+    /home/runner/work/tasks/tasks/node_modules/react-bootstrap/esm/Form.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import classNames from 'classnames';
+                                                                                      ^^^^^^
 
-      Name "Ada Lovelace":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+    SyntaxError: Cannot use import statement outside a module
 
-      Name "Charles Babbage":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+      1 | import React, { useState } from "react";
+    > 2 | import Form from "react-bootstrap/esm/Form";
+        | ^
+      3 |
+      4 | export function EditMode(): JSX.Element {
+      5 |     const [name, setName] = useState<string>("Your Name");
 
-      Name "Barbara Liskov":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/form-components/EditMode.tsx:2:1)
 
-      Name "Margaret Hamilton":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
 
-      Name "Clear Team":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Next Color":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Shove":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Add One":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Reveal Answer":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Start Quiz":
-      [36m<button />[39m
-
-      Name "Stop Quiz":
-      [36m<button[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Mulligan":
-      [36m<button />[39m
-
-      Name "Roll Left":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Roll Right":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Change Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Alphabet":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Year":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mDouble Half[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mred[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
-            [36m/>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
-            [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      39 |     test("There is one bootstrap button with the text 'Log Hello World'", () => {
-      40 |         render(<App />);
-    > 41 |         const button = screen.getByRole("button", { name: /Log Hello World/i });
-         |                               ^
-      42 |         expect(button).toBeInTheDocument();
-      43 |         expect(button).toHaveClass("btn");
-      44 |         expect(button).toHaveClass("btn-primary");
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/HtmlCss.test.tsx:41:31)
-
-  ● Some Bootstrap Elements are added › Clicking the bootstrap button logs 'Hello World!'
-
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Log Hello World/i`
-
-    Here are the accessible roles:
-
-      banner:
-
-      Name "":
-      [36m<header[39m
-        [33mclass[39m=[32m"App-header"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      separator:
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      Name "":
-      [36m<hr />[39m
-
-      --------------------------------------------------
-      heading:
-
-      Name "Double Half":
-      [36m<h3 />[39m
-
-      Name "Choose Team":
-      [36m<h3 />[39m
-
-      Name "Colored Box":
-      [36m<h3 />[39m
-
-      Name "Shove Box":
-      [36m<h3 />[39m
-
-      --------------------------------------------------
-      button:
-
-      Name "Double":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Halve":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Alan Turing":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Grace Hopper":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Ada Lovelace":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Charles Babbage":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Barbara Liskov":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Margaret Hamilton":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Clear Team":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Next Color":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Shove":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Add One":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Reveal Answer":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Start Quiz":
-      [36m<button />[39m
-
-      Name "Stop Quiz":
-      [36m<button[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Mulligan":
-      [36m<button />[39m
-
-      Name "Roll Left":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Roll Right":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Change Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Alphabet":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      Name "Advance by Year":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript[0m
-          [36m</header>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mDouble Half[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [0mThe current value is: [0m
-              [36m<span>[39m
-                [0m10[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mDouble[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mHalve[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mChoose Team[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAlan Turing[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mGrace Hopper[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mAda Lovelace[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mCharles Babbage[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mBarbara Liskov[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
-                [36m>[39m
-                  [0mAdd[0m
-                  [0m [0m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mMargaret Hamilton[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
-              [36m>[39m
-                [36m<strong>[39m
-                  [0mTeam:[0m
-                [36m</strong>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear Team[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mColored Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mred[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mNext Color[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mShove Box[0m
-            [36m</h3>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mShove[0m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"moveable-box"[39m
-              [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
-            [36m/>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<span>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mAdd One[0m
-            [36m</button>[39m
-            [0mto [0m
-            [0m0[0m
-            [0m.[0m
-          [36m</span>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mReveal Answer[0m
-            [36m</button>[39m
-            [36m<div>[39m
-              [0m42[0m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<p>[39m
-              [0mNumber of attemps: [0m
-              [0m4[0m
-            [36m</p>[39m
-            [36m<button>[39m
-              [0mStart Quiz[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mdisabled[39m=[32m""[39m
-            [36m>[39m
-              [0mStop Quiz[0m
-            [36m</button>[39m
-            [36m<button>[39m
-              [0mMulligan[0m
-            [36m</button>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mLeft Die: [0m
-              [36m<span>[39m
-                [0m1[0m
-              [36m</span>[39m
-              [0mRight Die: [0m
-              [36m<span>[39m
-                [0m5[0m
-                [0m [0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Left[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mRoll Right[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mYou lose.[0m
-              [36m</span>[39m
-              [36m<span />[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mChange Type[0m
-            [36m</button>[39m
-            [36m<span>[39m
-              [0mShort Answer Question[0m
-            [36m</span>[39m
-          [36m</div>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [0mCurrent Holiday: [0m
-              [36m<span>[39m
-                [0m [0m
-                [0m🎄[0m
-              [36m</span>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Alphabet[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mAdvance by Year[0m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      54 |         const consoleSpy = jest.spyOn(console, "log");
-      55 |         render(<App />);
-    > 56 |         const button = screen.getByRole("button", { name: /Log Hello World/i });
-         |                               ^
-      57 |         userEvent.click(button);
-      58 |         expect(consoleSpy).toHaveBeenCalledWith("Hello World!");
-      59 |     });
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/HtmlCss.test.tsx:56:31)
-
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |     100 |    97.56 |     100 |     100 |                   
- src                |     100 |      100 |     100 |     100 |                   
-  App.tsx           |     100 |      100 |     100 |     100 |                   
-  arrays.ts         |     100 |      100 |     100 |     100 |                   
-  functions.ts      |     100 |      100 |     100 |     100 |                   
-  nested.ts         |     100 |      100 |     100 |     100 |                   
-  objects.ts        |     100 |      100 |     100 |     100 |                   
- src/bad-components |     100 |    83.33 |     100 |     100 |                   
-  ChooseTeam.tsx    |     100 |       50 |     100 |     100 | 20                
-  ColoredBox.tsx    |     100 |      100 |     100 |     100 |                   
-  DoubleHalf.tsx    |     100 |      100 |     100 |     100 |                   
-  ShoveBox.tsx      |     100 |      100 |     100 |     100 |                   
- src/components     |     100 |    94.44 |     100 |     100 |                   
-  ChangeType.tsx    |     100 |      100 |     100 |     100 |                   
-  Counter.tsx       |     100 |      100 |     100 |     100 |                   
-  CycleHoliday.tsx  |     100 |      100 |     100 |     100 |                   
-  RevealAnswer.tsx  |     100 |      100 |     100 |     100 |                   
-  StartAttempt.tsx  |     100 |      100 |     100 |     100 |                   
-  TwoDice.tsx       |     100 |       90 |     100 |     100 | 31                
- src/interfaces     |       0 |        0 |       0 |       0 |                   
-  answer.ts         |       0 |        0 |       0 |       0 |                   
-  question.ts       |       0 |        0 |       0 |       0 |                   
---------------------|---------|----------|---------|---------|-------------------
-Test Suites: 6 failed, 11 passed, 17 total
-Tests:       18 failed, 100 passed, 118 total
+Test Suites: 12 failed, 10 passed, 22 total
+Tests:       20 failed, 108 passed, 128 total
 Snapshots:   0 total
-Time:        7.677 s
+Time:        7.994 s
 Ran all test suites.
