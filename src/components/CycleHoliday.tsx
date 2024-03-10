@@ -34,12 +34,8 @@ export function CycleHoliday(): JSX.Element {
                 Current Holiday: <span> {currHoliday}</span>
             </div>
             <div>
-                <Button onClick={alphabeticHoliday}>
-                    New Holiday Alphabetically{" "}
-                </Button>
-                <Button onClick={sequentialHoliday}>
-                    New Holiday Sequentially
-                </Button>
+                <Button onClick={alphabeticHoliday}>Advance by Alphabet</Button>
+                <Button onClick={sequentialHoliday}>Advance by Year</Button>
             </div>
         </div>
     );
