@@ -4,10 +4,6 @@ import { Form } from "react-bootstrap";
 export function ChangeColor(): JSX.Element {
     const [currColor, setCurrColor] = useState<string>("red");
 
-    function updateColor(event: React.ChangeEvent<HTMLInputElement>) {
-        setCurrColor(event.target.value);
-    }
-
     return (
         <div>
             <div>
@@ -18,7 +14,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="red"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("red")}
                     id="response-red"
                     label="red"
                     style={{ backgroundColor: "red" }}
@@ -28,7 +24,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="orange"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("orange")}
                     id="response-orange"
                     label="orange"
                     style={{ backgroundColor: "orange" }}
@@ -38,7 +34,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="yellow"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("yellow")}
                     id="response-yellow"
                     label="yellow"
                     style={{ backgroundColor: "yellow" }}
@@ -48,7 +44,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="green"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("green")}
                     id="response-green"
                     label="green"
                     style={{ backgroundColor: "green" }}
@@ -58,7 +54,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="blue"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("blue")}
                     id="response-blue"
                     label="blue"
                     style={{ backgroundColor: "blue" }}
@@ -68,7 +64,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="amethyst"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("amethyst")}
                     id="response-amethyst"
                     label="amethyst"
                     style={{ backgroundColor: "#9966cc" }}
@@ -78,7 +74,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="purple"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("purple")}
                     id="response-purple"
                     label="purple"
                     style={{ backgroundColor: "purple" }}
@@ -88,7 +84,7 @@ export function ChangeColor(): JSX.Element {
                     inline
                     type="radio"
                     name="sage green"
-                    onChange={updateColor}
+                    onChange={() => setCurrColor("sage green")}
                     id="response-sage-green"
                     label="sage green"
                     style={{ backgroundColor: "#9CAF88" }}
