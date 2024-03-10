@@ -31,6 +31,15 @@ export function EditMode(): JSX.Element {
                     checked={edit}
                     onChange={updateEdit}
                 />
+                <div>
+                    <Form.Check
+                        type="checkbox"
+                        id="is-student-check"
+                        label="Are you a student?"
+                        checked={isStudent}
+                        onChange={updateStudent}
+                    />
+                </div>
             </div>
             <div>
                 <Form.Group controlId="formMovieName">
@@ -44,17 +53,6 @@ export function EditMode(): JSX.Element {
             </div>
             <div>
                 {name} is {isStudent ? "a student" : "not a student"}
-            </div>
-            <div>
-                <div>
-                    <Form.Check
-                        type="checkbox"
-                        id="is-student-check"
-                        label="Are you a student?"
-                        checked={isStudent}
-                        onChange={updateStudent}
-                    />
-                </div>
             </div>
         </div>
     );
